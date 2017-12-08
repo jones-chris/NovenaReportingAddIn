@@ -22,5 +22,40 @@ namespace NovenaReportingAddIn.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C:\\Users\\Public\\Repos\\NovenaLibrary\\NovenaLibrary\\Data\\novena-dev.db;" +
+            " Version=3;")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SELECT tbl_name FROM sqlite_master where type =\'table\' OR type =\'view\';")]
+        public string AvailableTablesSQL {
+            get {
+                return ((string)(this["AvailableTablesSQL"]));
+            }
+            set {
+                this["AvailableTablesSQL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        public int DatabaseType {
+            get {
+                return ((int)(this["DatabaseType"]));
+            }
+            set {
+                this["DatabaseType"] = value;
+            }
+        }
     }
 }

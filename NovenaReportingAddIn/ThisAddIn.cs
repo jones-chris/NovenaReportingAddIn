@@ -8,6 +8,7 @@ using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 using System.Windows.Forms;
 using NovenaLibrary;
+using NovenaLibrary.Config;
 
 namespace NovenaReportingAddIn
 {
@@ -88,7 +89,12 @@ namespace NovenaReportingAddIn
         {
             try
             {
-                novenaReportingAPI = new NovenaReportingAPI(Globals.ThisAddIn.Application);
+                var excelApp = Globals.ThisAddIn.Application;
+                var connectionString = Properties.Settings.Default.ConnectionString;
+                var availableTablesSQL = Properties.Settings.Default.AvailableTablesSQL;
+                var databaseType = (DatabaseType)Properties.Settings.Default.DatabaseType;
+
+                novenaReportingAPI = new NovenaReportingAPI(excelApp, connectionString, availableTablesSQL, databaseType);
             }
             catch (ArgumentOutOfRangeException)
             {
