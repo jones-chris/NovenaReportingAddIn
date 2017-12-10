@@ -17,5 +17,10 @@ namespace NovenaReportingAddIn
         {
             Globals.ThisAddIn.novenaReportingAPI.ShowSqlCreator();
         }
+
+        private void button_signIn_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.novenaReportingAPI.LogIn();
+        }
     }
 }

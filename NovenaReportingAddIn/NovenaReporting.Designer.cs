@@ -78,6 +78,7 @@
             this.button_signIn.Name = "button_signIn";
             this.button_signIn.OfficeImageId = "AccessTableContacts";
             this.button_signIn.ShowImage = true;
+            this.button_signIn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_signIn_Click);
             // 
             // group_cellMapping
             // 
