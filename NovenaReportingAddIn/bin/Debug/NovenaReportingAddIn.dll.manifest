@@ -420,26 +420,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NovenaLibrary.dll" size="58880">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NovenaLibrary.dll" size="240640">
       <assemblyIdentity name="NovenaLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>O/a5Ym9tC+7RtWi524B9JMfmr8SNcA+urupW292oI6s=</dsig:DigestValue>
+        <dsig:DigestValue>sOG6va2iszAHedyTPVP3SkcMAFK1fdCfAxzj0clZ0EI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NovenaReportingAddIn.dll" size="25088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NovenaReportingAddIn.dll" size="26112">
       <assemblyIdentity name="NovenaReportingAddIn" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0JW94V0gPKeFcsFGv+fBecO4CJ8dgM76QXr3kXitrTc=</dsig:DigestValue>
+        <dsig:DigestValue>QJJmtKKrOFmXNWlKtTKZsmfSJO0YyQIbUJJoxV8giMY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -515,13 +515,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="NovenaReportingAddIn.dll.config" size="4351">
+  <file name="NovenaReportingAddIn.dll.config" size="4791">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9DbC/0/Y2nQTI0mlzW0Uvhn8E7f/Y67w1knZKQKr9f0=</dsig:DigestValue>
+      <dsig:DigestValue>rrQFQRhBaZZkqqYq6SOQoC56BhDeaW4xsOJFRuUQ9VI=</dsig:DigestValue>
     </hash>
   </file>
   <vstav3:addIn xmlns:vstav3="urn:schemas-microsoft-com:vsta.v3">
@@ -549,4 +549,4 @@
       </vstov4:customizations>
     </vstav3:application>
   </vstav3:addIn>
-<publisherIdentity name="CN=DESKTOP-AJM5HR0\chramy" issuerKeyHash="5102239fee8d42720d272fc0c6fc9e86c7d774f8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>IO5qKFUZ4Lcp+0/T0meed1gi7ilq3QJZbb41F6EOjvY=</DigestValue></Reference></SignedInfo><SignatureValue>W7bAZHavHJoJtAIkAke1h0ilG+MH+svbaiI72Wv4fuT7HQHNVyciT66xl7yb+WUF9HhoDCnln0Sl2qJ+QvdvLgStHoZy3J7sSPpSeEhYjvv0L8/b1jwV0OQeXHvVXLrO2jeJmkKh/1GC3fPszOPMm/vAHQQa+7q8NJG0ypAsz1U=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>yweLW/tQtGI2PoqBuzJ2MWD086Bcyc99dlG3z8n1I+XMz+y0M2zoWI8x6uMHJxQ8TCMBxgcmbAQM5m8p55VxJ2mXvrhmISQDKUOL/+KfDsbT33wpawaDlsiVMCQL11Qn3NGT2uBEb9Ifu4yB8AJ3EikMonRRflndogBqp3nQyhU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f68e0ea11735be6d5902dd6a29ee2258779e67d2d34ffb29b7e01955286aee20" Description="" Url=""><as:assemblyIdentity name="NovenaReportingAddIn.dll" version="1.0.0.0" publicKeyToken="406ed1a4c6a3ec6c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-AJM5HR0\chramy</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>+xBfBES8ilzqPm3EWGbQrJffjAuU1UaGa/Q3R0928lM=</DigestValue></Reference></SignedInfo><SignatureValue>k6DnekpkWKW8XPzs7H9ztRKiu9DVazRmP4tmqsPRfhVBSSkX/qAULUo/tUox2v0RAmBVuSR6kGqnmlakk9eqCAOWAgOFLy+9qq1v3Gg9H4Y3W/sCAqClLHwdRyiIOuuDhQ/lvMOyZqBJM84xTUIARdQ3yt3Rp5IMtjBnTqdpT2I=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>yweLW/tQtGI2PoqBuzJ2MWD086Bcyc99dlG3z8n1I+XMz+y0M2zoWI8x6uMHJxQ8TCMBxgcmbAQM5m8p55VxJ2mXvrhmISQDKUOL/+KfDsbT33wpawaDlsiVMCQL11Qn3NGT2uBEb9Ifu4yB8AJ3EikMonRRflndogBqp3nQyhU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQUHQIdjKuH5BH8u9pO2Yy/DANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtAEEASgBNADUASABSADAAXABjAGgAcgBhAG0AeTAeFw0xNzEyMDQwNDE0MjdaFw0xODEyMDQxMDE0MjdaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0AQQBKAE0ANQBIAFIAMABcAGMAaAByAGEAbQB5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLB4tb+1C0YjY+ioG7MnYxYPTzoFzJz312UbfPyfUj5czP7LQzbOhYjzHq4wcnFDxMIwHGByZsBAzmbynnlXEnaZe+uGYhJAMpQ4v/4p8OxtPffClrBoOWyJUwJAvXVCfc0ZPa4ERv0h+7jIHwAncSKQyidFF+Wd2iAGqnedDKFQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAGswYA9ODLQDeCwJMOPNc+MYtl9eNvrXRP2TJJKS1XAx/JqMYfZ+zT4Ac1BPMiHQjJgrB1kUmNlMwGFua07iYd743Hg32HaBtFlq1LI96r5LTFDw4n+rplHW4HwVTyoxEh6AEp1WYxu6md1KMPKwdZSU+0gc/j55FDsVBLolXUkc</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
+<publisherIdentity name="CN=DESKTOP-AJM5HR0\chramy" issuerKeyHash="5102239fee8d42720d272fc0c6fc9e86c7d774f8" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>YPOOtNO5TQqDKes4qnoJ2y5je3eR2CZkNiAdZZS9T3c=</DigestValue></Reference></SignedInfo><SignatureValue>H6T8QN/S7pjASw4SezD+qswJ3H8//WAICkwE9PVRCq04vrCQ7xY/Lyr0vSAhKkquF0UlUKU/A0cDvP/VFGQS3vZU47fSY+fDnb/xSrcFeIYt8uNLD8b7IV4Z1JK/iZW2xHEhSNW2obihEmGlm7KeePEutwv5GSL1SR46pzd0MFs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>yweLW/tQtGI2PoqBuzJ2MWD086Bcyc99dlG3z8n1I+XMz+y0M2zoWI8x6uMHJxQ8TCMBxgcmbAQM5m8p55VxJ2mXvrhmISQDKUOL/+KfDsbT33wpawaDlsiVMCQL11Qn3NGT2uBEb9Ifu4yB8AJ3EikMonRRflndogBqp3nQyhU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="774fbd94651d20366426d891777b632edb097aaa38eb29830a4db9d3b48ef360" Description="" Url=""><as:assemblyIdentity name="NovenaReportingAddIn.dll" version="1.0.0.0" publicKeyToken="406ed1a4c6a3ec6c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-AJM5HR0\chramy</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>IF0goWVh7IiITS4Apui6YJuUppc/IEX0KtSicCLorKc=</DigestValue></Reference></SignedInfo><SignatureValue>Rke+RYnawnhiB2fFkwy9T3CyxCuoXpu0Le7JTHVP1pKjUdOlNP//0pap+vUGkwudpMj2CHUsmnMeg5GYc1P7kb3smTxIIQJPeGEe9uRc7IwUYHvXRdZBTvHubwn0Q95tgHLUwO9CN4qUES9o3LLBlHrO3yT8DXrHqTr+pNmfD3A=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>yweLW/tQtGI2PoqBuzJ2MWD086Bcyc99dlG3z8n1I+XMz+y0M2zoWI8x6uMHJxQ8TCMBxgcmbAQM5m8p55VxJ2mXvrhmISQDKUOL/+KfDsbT33wpawaDlsiVMCQL11Qn3NGT2uBEb9Ifu4yB8AJ3EikMonRRflndogBqp3nQyhU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQUHQIdjKuH5BH8u9pO2Yy/DANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwARABFAFMASwBUAE8AUAAtAEEASgBNADUASABSADAAXABjAGgAcgBhAG0AeTAeFw0xNzEyMDQwNDE0MjdaFw0xODEyMDQxMDE0MjdaMDcxNTAzBgNVBAMeLABEAEUAUwBLAFQATwBQAC0AQQBKAE0ANQBIAFIAMABcAGMAaAByAGEAbQB5MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLB4tb+1C0YjY+ioG7MnYxYPTzoFzJz312UbfPyfUj5czP7LQzbOhYjzHq4wcnFDxMIwHGByZsBAzmbynnlXEnaZe+uGYhJAMpQ4v/4p8OxtPffClrBoOWyJUwJAvXVCfc0ZPa4ERv0h+7jIHwAncSKQyidFF+Wd2iAGqnedDKFQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAGswYA9ODLQDeCwJMOPNc+MYtl9eNvrXRP2TJJKS1XAx/JqMYfZ+zT4Ac1BPMiHQjJgrB1kUmNlMwGFua07iYd743Hg32HaBtFlq1LI96r5LTFDw4n+rplHW4HwVTyoxEh6AEp1WYxu6md1KMPKwdZSU+0gc/j55FDsVBLolXUkc</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

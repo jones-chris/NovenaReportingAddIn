@@ -36,16 +36,16 @@
         {
             this.tab_novenaReporting = this.Factory.CreateRibbonTab();
             this.group_authentication = this.Factory.CreateRibbonGroup();
-            this.button_signIn = this.Factory.CreateRibbonButton();
             this.group_cellMapping = this.Factory.CreateRibbonGroup();
+            this.group_queryTools = this.Factory.CreateRibbonGroup();
+            this.group_reportBuilder = this.Factory.CreateRibbonGroup();
+            this.button_signIn = this.Factory.CreateRibbonButton();
             this.button_addCellMapping = this.Factory.CreateRibbonButton();
             this.button_deleteCellMapping = this.Factory.CreateRibbonButton();
-            this.group_queryTools = this.Factory.CreateRibbonGroup();
             this.button_queryCreator = this.Factory.CreateRibbonButton();
             this.button_refresh = this.Factory.CreateRibbonButton();
             this.button_drilldown = this.Factory.CreateRibbonButton();
             this.button_setDrilldownColumns = this.Factory.CreateRibbonButton();
-            this.group_reportBuilder = this.Factory.CreateRibbonGroup();
             this.button_checkReport = this.Factory.CreateRibbonButton();
             this.button_editConfiguration = this.Factory.CreateRibbonButton();
             this.tab_novenaReporting.SuspendLayout();
@@ -71,6 +71,29 @@
             this.group_authentication.Label = "Authentication";
             this.group_authentication.Name = "group_authentication";
             // 
+            // group_cellMapping
+            // 
+            this.group_cellMapping.Items.Add(this.button_addCellMapping);
+            this.group_cellMapping.Items.Add(this.button_deleteCellMapping);
+            this.group_cellMapping.Label = "Cell Mapping";
+            this.group_cellMapping.Name = "group_cellMapping";
+            // 
+            // group_queryTools
+            // 
+            this.group_queryTools.Items.Add(this.button_queryCreator);
+            this.group_queryTools.Items.Add(this.button_refresh);
+            this.group_queryTools.Items.Add(this.button_drilldown);
+            this.group_queryTools.Items.Add(this.button_setDrilldownColumns);
+            this.group_queryTools.Label = "Query Tools";
+            this.group_queryTools.Name = "group_queryTools";
+            // 
+            // group_reportBuilder
+            // 
+            this.group_reportBuilder.Items.Add(this.button_checkReport);
+            this.group_reportBuilder.Items.Add(this.button_editConfiguration);
+            this.group_reportBuilder.Label = "Report Builder";
+            this.group_reportBuilder.Name = "group_reportBuilder";
+            // 
             // button_signIn
             // 
             this.button_signIn.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -79,13 +102,6 @@
             this.button_signIn.OfficeImageId = "AccessTableContacts";
             this.button_signIn.ShowImage = true;
             this.button_signIn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_signIn_Click);
-            // 
-            // group_cellMapping
-            // 
-            this.group_cellMapping.Items.Add(this.button_addCellMapping);
-            this.group_cellMapping.Items.Add(this.button_deleteCellMapping);
-            this.group_cellMapping.Label = "Cell Mapping";
-            this.group_cellMapping.Name = "group_cellMapping";
             // 
             // button_addCellMapping
             // 
@@ -103,15 +119,6 @@
             this.button_deleteCellMapping.OfficeImageId = "DatasheetNewField";
             this.button_deleteCellMapping.ShowImage = true;
             // 
-            // group_queryTools
-            // 
-            this.group_queryTools.Items.Add(this.button_queryCreator);
-            this.group_queryTools.Items.Add(this.button_refresh);
-            this.group_queryTools.Items.Add(this.button_drilldown);
-            this.group_queryTools.Items.Add(this.button_setDrilldownColumns);
-            this.group_queryTools.Label = "Query Tools";
-            this.group_queryTools.Name = "group_queryTools";
-            // 
             // button_queryCreator
             // 
             this.button_queryCreator.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -128,6 +135,7 @@
             this.button_refresh.Name = "button_refresh";
             this.button_refresh.OfficeImageId = "RecurrenceEdit";
             this.button_refresh.ShowImage = true;
+            this.button_refresh.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_refresh_Click);
             // 
             // button_drilldown
             // 
@@ -145,13 +153,6 @@
             this.button_setDrilldownColumns.OfficeImageId = "TableStyleRowHeaders";
             this.button_setDrilldownColumns.ShowImage = true;
             // 
-            // group_reportBuilder
-            // 
-            this.group_reportBuilder.Items.Add(this.button_checkReport);
-            this.group_reportBuilder.Items.Add(this.button_editConfiguration);
-            this.group_reportBuilder.Label = "Report Builder";
-            this.group_reportBuilder.Name = "group_reportBuilder";
-            // 
             // button_checkReport
             // 
             this.button_checkReport.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
@@ -167,6 +168,7 @@
             this.button_editConfiguration.Name = "button_editConfiguration";
             this.button_editConfiguration.OfficeImageId = "FilePrepareMenu";
             this.button_editConfiguration.ShowImage = true;
+            this.button_editConfiguration.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_editConfiguration_Click);
             // 
             // NovenaReporting
             // 
