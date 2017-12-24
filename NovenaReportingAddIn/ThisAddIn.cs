@@ -19,6 +19,7 @@ namespace NovenaReportingAddIn
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
+            ShowOnlyEditConfigurationButton();
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
@@ -28,20 +29,14 @@ namespace NovenaReportingAddIn
         void Application_WorkbookOpen(Excel.Workbook Wb)
         {
             // Test if workbook has Properties sheet and if Type is "Report"
-            try
+            if (IsNovenaReportingWorkbook(Wb))
             {
-                Excel.Worksheet propertySheet = Wb.Worksheets["properties"];
-                string referredRange = Wb.Names.Item("Type").RefersTo;
-                referredRange = referredRange.Replace("=", "");
-                string doodlesType = propertySheet.Range[referredRange].Value;
-                if (!doodlesType.Equals("Report"))
-                {
-                    HideRibbon();
-                }
+                // If workbook is a Doodles Reporting workbook, show ribbon.
+                ShowRibbon();
             }
-            catch (Exception)
+            else
             {
-                HideRibbon();
+                // If workbook is not a Doodles Reporting workboook, exit function (ribbon is already hidden).
                 return;
             }
 
@@ -85,6 +80,30 @@ namespace NovenaReportingAddIn
             }
         }
 
+        private bool IsNovenaReportingWorkbook(Excel.Workbook Wb)
+        {
+            try
+            {
+                Excel.Worksheet propertySheet = Wb.Worksheets["properties"];
+                string referredRange = Wb.Names.Item("Type").RefersTo;
+                referredRange = referredRange.Replace("=", "");
+                string doodlesType = propertySheet.Range[referredRange].Value;
+
+                if (doodlesType.Equals("Report"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         private void ConfigureNovenaReporting()
         {
             try
@@ -99,13 +118,13 @@ namespace NovenaReportingAddIn
             catch (ArgumentOutOfRangeException)
             {
                 MessageBox.Show("A dictionary property is malformed.  Make sure the property has an even number of '|' occurrences.", "Property Malformed", MessageBoxButtons.OK);
-                HideRibbon();
+                ShowOnlyEditConfigurationButton();
                 return;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ".  " + ex.InnerException.Message, "Properties Worksheet", MessageBoxButtons.OK);
-                HideRibbon();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                ShowOnlyEditConfigurationButton();
                 return;
             }
         }
@@ -113,6 +132,21 @@ namespace NovenaReportingAddIn
         private void HideRibbon()
         {
             Globals.Ribbons.NovenaReporting.tab_novenaReporting.Visible = false;
+        }
+
+        private void ShowOnlyEditConfigurationButton()
+        {
+            Globals.Ribbons.NovenaReporting.group_authentication.Visible = false;
+            Globals.Ribbons.NovenaReporting.group_cellMapping.Visible = false;
+            Globals.Ribbons.NovenaReporting.group_queryTools.Visible = false;
+        }
+
+        private void ShowRibbon()
+        {
+            //Globals.Ribbons.NovenaReporting.tab_novenaReporting.Visible = true;
+            Globals.Ribbons.NovenaReporting.group_authentication.Visible = true;
+            Globals.Ribbons.NovenaReporting.group_cellMapping.Visible = true;
+            Globals.Ribbons.NovenaReporting.group_queryTools.Visible = true;
         }
 
         #region VSTO generated code

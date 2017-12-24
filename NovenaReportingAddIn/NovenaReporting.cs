@@ -29,9 +29,18 @@ namespace NovenaReportingAddIn
         {
             var dbConnStrings = Properties.Settings.Default.ConnectionStrings.Cast<string>().ToList();
             var newSettings = Globals.ThisAddIn.novenaReportingAPI.EditConfiguration(dbConnStrings);
+
+            // Updates application settings
             if (newSettings != null)
             {
-                Properties.Settings.Default.ConnectionStrings = (StringCollection)newSettings["dbConnStrings"];
+                // Create string array and then pass to new StringCollection
+                var connStringsList = (List<string>)newSettings["dbConnStrings"];
+                var connStringsArray = connStringsList.ToArray();
+                var newStringCollection = new StringCollection();
+                newStringCollection.AddRange(connStringsArray);
+
+                // Update application settings
+                Properties.Settings.Default.ConnectionStrings = newStringCollection;
                 Properties.Settings.Default.ConnectionString = newSettings["activeConnectionString"].ToString();
                 Properties.Settings.Default.DatabaseType = (int)newSettings["activeDatabaseType"];
                 Properties.Settings.Default.AvailableTablesSQL = newSettings["availableTablesSQL"].ToString();
