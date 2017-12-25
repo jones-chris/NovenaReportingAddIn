@@ -144,6 +144,7 @@
             this.button_drilldown.Name = "button_drilldown";
             this.button_drilldown.OfficeImageId = "ZoomPrintPreviewExcel";
             this.button_drilldown.ShowImage = true;
+            this.button_drilldown.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_drilldown_Click);
             // 
             // button_setDrilldownColumns
             // 

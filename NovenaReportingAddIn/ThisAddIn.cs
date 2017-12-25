@@ -9,6 +9,7 @@ using Microsoft.Office.Tools.Excel;
 using System.Windows.Forms;
 using NovenaLibrary;
 using NovenaLibrary.Config;
+using System.IO;
 
 namespace NovenaReportingAddIn
 {
@@ -20,6 +21,13 @@ namespace NovenaReportingAddIn
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             ShowOnlyEditConfigurationButton();
+            // load NovenaFunctions.xlam
+            //var novenaFunctionsAddIn = Application.AddIns.Add("~/NovenaFunctions/NovenaFunctions.xlam", true);
+            //var rootPath = Path.GetFullPath(Path.Combine(new string[] { AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\..\\" }));
+            //var novenaFunctionsAddIn = Application.AddIns.Add(rootPath + "NovenaFunctions\\NovenaFunctions.xlam", true);
+            //var novenaFunctionsAddIn = Application.AddIns.Add("C:\\Users\\Public\\Repos\\NovenaReportingAddIn\\NovenaReportingAddIn\\NovenaFunctions\\NovenaFunctions.xlam", true);
+            //var novenaFunctionsAddIn = Application.AddIns.Add("C:\\NovenaFunctions.xlam", true);
+            //novenaFunctionsAddIn.Installed = true;
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)

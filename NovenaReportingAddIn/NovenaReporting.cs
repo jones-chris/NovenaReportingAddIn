@@ -5,6 +5,8 @@ using System.Text;
 using Microsoft.Office.Tools.Ribbon;
 using System.Collections;
 using System.Collections.Specialized;
+using System.IO;
+using System.Windows.Forms;
 
 namespace NovenaReportingAddIn
 {
@@ -12,7 +14,26 @@ namespace NovenaReportingAddIn
     {
         private void NovenaReporting_Load(object sender, RibbonUIEventArgs e)
         {
-
+            try
+            {
+                var novenaFunctionsAddIn = Globals.ThisAddIn.Application.AddIns.Item["NovenaFuctions2"];
+                if ( novenaFunctionsAddIn == null)
+                {
+                    var rootPath = Path.GetFullPath(Path.Combine(new string[] { AppDomain.CurrentDomain.BaseDi‌​rectory, "..\\..\\" }));
+                    novenaFunctionsAddIn = Globals.ThisAddIn.Application.AddIns.Add(rootPath + "NovenaFunctions\\NovenaFunctions2.xlam");
+                    //var novenaFunctionsAddIn = Application.AddIns.Add("C:\\NovenaFunctions.xlam");
+                    novenaFunctionsAddIn.Installed = true;
+                }
+                Globals.ThisAddIn.Application.DisplayAlerts = false;
+                Globals.ThisAddIn.Application.AddIns.Item["NovenaFunctions2"].Installed = true;
+                Globals.ThisAddIn.Application.DisplayAlerts = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error loading the NovenaFunctions Excel Add-in.  " + ex.Message, 
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         private void button_queryCreator_Click(object sender, RibbonControlEventArgs e)
@@ -52,6 +73,11 @@ namespace NovenaReportingAddIn
         private void button_refresh_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.novenaReportingAPI.RefreshData();
+        }
+
+        private void button_drilldown_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.novenaReportingAPI.Drilldown();
         }
     }
 }
