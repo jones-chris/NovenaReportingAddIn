@@ -96,5 +96,10 @@ namespace NovenaReportingAddIn
         {
             Globals.ThisAddIn.novenaReportingAPI.Drilldown();
         }
+
+        private void button_setDrilldownColumns_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.novenaReportingAPI.SetDrilldownColumns();
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace NovenaReportingAddIn
     public partial class ThisAddIn
     {
         public NovenaReportingAPI novenaReportingAPI;
+        //private readonly string NOVENA_XML_NAMESPACE = "http://www.w3.org/2001/XMLSchema";
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
@@ -29,7 +30,8 @@ namespace NovenaReportingAddIn
         void Application_WorkbookOpen(Excel.Workbook Wb)
         {
             // Test if workbook has Properties sheet and if Type is "Report"
-            if (IsNovenaReportingWorkbook(Wb))
+            var workbookPropertiesXML = GetNovenaReportingWorkbookPropertiesXML(Wb);
+            if (workbookPropertiesXML != null)
             {
                 // If workbook is a Doodles Reporting workbook, show ribbon.
                 ShowRibbon();
@@ -44,7 +46,7 @@ namespace NovenaReportingAddIn
             Excel.Workbooks books = Globals.ThisAddIn.Application.Workbooks;
             if (books.Count == 1)
             {
-                ConfigureNovenaReporting();
+                ConfigureNovenaReportingAPI(workbookPropertiesXML);
             }
             else
             {
@@ -67,44 +69,35 @@ namespace NovenaReportingAddIn
             }
         }
 
-        void Application_SheetChange(object Sh, Excel.Range Target)
+        private string GetNovenaReportingWorkbookPropertiesXML(Excel.Workbook Wb)
         {
-            Excel.Worksheet sheet = (Excel.Worksheet)Sh;
-            if (sheet.Name == "properties")
-            {
-                Application.EnableEvents = false;
-                MessageBox.Show("This sheet cannot be edited", "Don't Touch This Sheet", MessageBoxButtons.OK);
-                Excel._Application app = sheet.Application;
-                app.Undo();
-                Application.EnableEvents = true;
-            }
-        }
 
-        private bool IsNovenaReportingWorkbook(Excel.Workbook Wb)
-        {
-            try
+            Office.CustomXMLParts allXMLParts = Wb.CustomXMLParts;
+            foreach (Office.CustomXMLPart part in allXMLParts)
             {
-                Excel.Worksheet propertySheet = Wb.Worksheets["properties"];
-                string referredRange = Wb.Names.Item("Type").RefersTo;
-                referredRange = referredRange.Replace("=", "");
-                string doodlesType = propertySheet.Range[referredRange].Value;
-
-                if (doodlesType.Equals("Report"))
+                if (part.DocumentElement.BaseName == "WorkbookProperties")
                 {
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    return part.XML;
                 }
             }
-            catch (Exception)
-            {
-                return false;
-            }
+
+            return null;
+            //Office.CustomXMLParts novenaXMLParts = Wb.CustomXMLParts.SelectByNamespace(NOVENA_XML_NAMESPACE);
+                
+            // TODO:  Add logic to check that the XML has a Type element of Novena Reporting.  We don't want to
+            // load Novena Entry XML into a Novena Reporting add-in, for example.
+            //if (novenaXMLParts.Count > 0)
+            //{
+            //    return novenaXMLParts[0].XML;
+            //}
+            //else
+            //{
+            //    return null;
+            //}
+
         }
 
-        private void ConfigureNovenaReporting()
+        private void ConfigureNovenaReportingAPI(string workbookPropertiesXML)
         {
             try
             {
@@ -113,17 +106,11 @@ namespace NovenaReportingAddIn
                 var availableTablesSQL = Properties.Settings.Default.AvailableTablesSQL;
                 var databaseType = (DatabaseType)Properties.Settings.Default.DatabaseType;
 
-                novenaReportingAPI = new NovenaReportingAPI(excelApp, connectionString, availableTablesSQL, databaseType);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                MessageBox.Show("A dictionary property is malformed.  Make sure the property has an even number of '|' occurrences.", "Property Malformed", MessageBoxButtons.OK);
-                ShowOnlyEditConfigurationButton();
-                return;
+                novenaReportingAPI = new NovenaReportingAPI(excelApp, connectionString, availableTablesSQL, databaseType, workbookPropertiesXML);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                MessageBox.Show(ex.Message + "  "+ ex.InnerException, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ShowOnlyEditConfigurationButton();
                 return;
             }
@@ -143,7 +130,6 @@ namespace NovenaReportingAddIn
 
         private void ShowRibbon()
         {
-            //Globals.Ribbons.NovenaReporting.tab_novenaReporting.Visible = true;
             Globals.Ribbons.NovenaReporting.group_authentication.Visible = true;
             Globals.Ribbons.NovenaReporting.group_cellMapping.Visible = true;
             Globals.Ribbons.NovenaReporting.group_queryTools.Visible = true;
@@ -160,7 +146,6 @@ namespace NovenaReportingAddIn
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
-            this.Application.SheetChange += new Excel.AppEvents_SheetChangeEventHandler(Application_SheetChange);
         }
 
         #endregion
