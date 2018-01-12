@@ -82,18 +82,6 @@ namespace NovenaReportingAddIn
             }
 
             return null;
-            //Office.CustomXMLParts novenaXMLParts = Wb.CustomXMLParts.SelectByNamespace(NOVENA_XML_NAMESPACE);
-                
-            // TODO:  Add logic to check that the XML has a Type element of Novena Reporting.  We don't want to
-            // load Novena Entry XML into a Novena Reporting add-in, for example.
-            //if (novenaXMLParts.Count > 0)
-            //{
-            //    return novenaXMLParts[0].XML;
-            //}
-            //else
-            //{
-            //    return null;
-            //}
 
         }
 
@@ -146,6 +134,28 @@ namespace NovenaReportingAddIn
             this.Startup += new System.EventHandler(ThisAddIn_Startup);
             this.Shutdown += new System.EventHandler(ThisAddIn_Shutdown);
             this.Application.WorkbookOpen += new Excel.AppEvents_WorkbookOpenEventHandler(Application_WorkbookOpen);
+            this.Application.WorkbookBeforeClose += Application_WorkbookBeforeClose;
+;        }
+
+        private void Application_WorkbookBeforeClose(Excel.Workbook Wb, ref bool Cancel)
+        {
+            //var workbook = Globals.ThisAddIn.Application.ThisWorkbook;
+            var newXml = novenaReportingAPI._workbookPropertiesConfig.SerializeXML();
+
+            // loop thru each custom xml part and delete it if it has the WorkbookProperties baseElement.
+            foreach (Office.CustomXMLPart part in Wb.CustomXMLParts)
+            {
+                if (part.DocumentElement.BaseName == "WorkbookProperties") part.Delete();
+            }
+
+            try
+            {
+                Wb.CustomXMLParts.Add(newXml);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
