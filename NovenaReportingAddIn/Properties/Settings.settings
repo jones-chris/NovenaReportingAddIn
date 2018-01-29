@@ -3,17 +3,18 @@
   <Profiles />
   <Settings>
     <Setting Name="AvailableTablesSQL" Type="System.String" Scope="User">
-      <Value Profile="(Default)">SELECT tbl_name FROM sqlite_master where type ='table' OR type ='view';</Value>
+      <Value Profile="(Default)">SELECT table_name FROM information_schema.table_privileges WHERE grantee = '{0}' AND privilege_type = 'SELECT';</Value>
     </Setting>
     <Setting Name="DatabaseType" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">5</Value>
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=C:\Users\Public\Repos\NovenaLibrary\NovenaLibrary\Data\novena-dev.db; Version=3;</Value>
+      <Value Profile="(Default)">Host=novena-dev.csggfzanp0wj.us-west-2.rds.amazonaws.com;Port=5432;Database=novena_dev;Username={0};Password={1};</Value>
     </Setting>
     <Setting Name="ConnectionStrings" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;ArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;string&gt;Novena Development Database PG::PostgreSQL||Host=novena-dev.csggfzanp0wj.us-west-2.rds.amazonaws.com;Port=5432;Database=novena_dev;Username={0};Password={1};&lt;/string&gt;
   &lt;string&gt;Novena Development Database::SQLite||Data Source=C:\Users\Public\Repos\NovenaLibrary\NovenaLibrary\Data\novena-dev.db; Version=3;&lt;/string&gt;
 &lt;/ArrayOfString&gt;</Value>
     </Setting>

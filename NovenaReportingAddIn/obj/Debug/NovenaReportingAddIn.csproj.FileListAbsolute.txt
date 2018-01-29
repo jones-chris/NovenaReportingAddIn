@@ -41,7 +41,6 @@ C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\Novena
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\NovenaReportingAddIn.csproj.GenerateResource.Cache
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\NovenaReportingAddIn.dll
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\NovenaReportingAddIn.pdb
-C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\NovenaReportingAddIn.csprojResolveAssemblyReference.cache
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\NovenaLibrary.dll
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\NovenaLibrary.pdb
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\Npgsql.dll
@@ -59,3 +58,4 @@ C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\System
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\EntityFramework.xml
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\bin\Debug\System.Data.SQLite.xml
+C:\Users\Public\Repos\NovenaReportingAddIn\NovenaReportingAddIn\obj\Debug\NovenaReportingAddIn.csprojResolveAssemblyReference.cache

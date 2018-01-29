@@ -25,7 +25,8 @@ namespace NovenaReportingAddIn.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SELECT tbl_name FROM sqlite_master where type =\'table\' OR type =\'view\';")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SELECT table_name FROM information_schema.table_privileges WHERE grantee = \'{0}\' " +
+            "AND privilege_type = \'SELECT\';")]
         public string AvailableTablesSQL {
             get {
                 return ((string)(this["AvailableTablesSQL"]));
@@ -37,7 +38,7 @@ namespace NovenaReportingAddIn.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("5")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int DatabaseType {
             get {
                 return ((int)(this["DatabaseType"]));
@@ -49,8 +50,8 @@ namespace NovenaReportingAddIn.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=C:\\Users\\Public\\Repos\\NovenaLibrary\\NovenaLibrary\\Data\\novena-dev.db;" +
-            " Version=3;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Host=novena-dev.csggfzanp0wj.us-west-2.rds.amazonaws.com;Port=5432;Database=noven" +
+            "a_dev;Username={0};Password={1};")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));
@@ -64,6 +65,7 @@ namespace NovenaReportingAddIn.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>Novena Development Database PG::PostgreSQL||Host=novena-dev.csggfzanp0wj.us-west-2.rds.amazonaws.com;Port=5432;Database=novena_dev;Username={0};Password={1};</string>
   <string>Novena Development Database::SQLite||Data Source=C:\Users\Public\Repos\NovenaLibrary\NovenaLibrary\Data\novena-dev.db; Version=3;</string>
 </ArrayOfString>")]
         public global::System.Collections.Specialized.StringCollection ConnectionStrings {
