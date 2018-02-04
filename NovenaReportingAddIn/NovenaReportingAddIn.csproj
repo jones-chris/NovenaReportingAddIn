@@ -36,7 +36,7 @@
     <PublishUrl>C:\Users\chris&amp;amy\novena_install\</PublishUrl>
     <InstallUrl>https://jones-chris.s3-us-west-2.amazonaws.com/novena_install/</InstallUrl>
     <TargetCulture>en</TargetCulture>
-    <ApplicationVersion>1.0.0.8</ApplicationVersion>
+    <ApplicationVersion>1.0.0.9</ApplicationVersion>
     <AutoIncrementApplicationRevision>true</AutoIncrementApplicationRevision>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>2</UpdateInterval>
