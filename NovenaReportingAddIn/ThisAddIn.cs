@@ -8,8 +8,7 @@ using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 using System.Windows.Forms;
 using NovenaLibrary;
-using NovenaLibrary.Config;
-using System.IO;
+using QueryBuilder.Config;
 
 namespace NovenaReportingAddIn
 {
@@ -139,8 +138,8 @@ namespace NovenaReportingAddIn
 
         private void Application_WorkbookBeforeClose(Excel.Workbook Wb, ref bool Cancel)
         {
-            //var workbook = Globals.ThisAddIn.Application.ThisWorkbook;
-            var newXml = novenaReportingAPI._workbookPropertiesConfig.SerializeXML();
+            var xml = "";
+            //var newXml = novenaReportingAPI._workbookPropertiesConfig.SerializeXML();
 
             // loop thru each custom xml part and delete it if it has the WorkbookProperties baseElement.
             foreach (Office.CustomXMLPart part in Wb.CustomXMLParts)
@@ -150,7 +149,7 @@ namespace NovenaReportingAddIn
 
             try
             {
-                Wb.CustomXMLParts.Add(newXml);
+                Wb.CustomXMLParts.Add(xml);
             }
             catch (Exception ex)
             {
